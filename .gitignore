@@ -1,6 +1,9 @@
 # default sqlite database
 mydb*.sqlite
 
+test-results/
+playwright-report/
+
 # Logs
 logs
 *.log
