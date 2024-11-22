@@ -3,12 +3,12 @@ import { dbTurso } from "./db/db-turso.js";
 import { dbURI } from "./endpoints.js";
 import { config } from "./config.js";
 
-// Acá estoy usando una expresión condicional para instanciar el adaptador de
-// base de datos que se va a usar, porque si en lugar de hacer eso llamo a una
-// función que me devuelva la configuración, se produce un problema: al
-// importar db en otros módulos, la función de inicialización no fue llamada y
-// db no está definido. Otra posibilidad sería tener una función para
-// inicializar el adaptador y db, y llamarla antes de hacer el import de db:
+// I use a conditional expression to instantiate the database adapter that
+// will be used, because if instead of doing that I call a function that returns
+// the configuration, a problem occurs: when importing db in other modules, the
+// initialization function was not called and db is not defined. Another option
+// would be to have a function to initialize the adapter and db, and call it
+// before importing db:
 // import { initializeDB, setDB } from "./global-store.js";
 // initializeDB();
 // setDB();
@@ -24,11 +24,6 @@ let dbAdapters = {
 
 /**@type {dbSqlite3 | dbTurso} */
 export const db = dbAdapters[config.DB_ADAPTER];
-
-/* export const db = new dbTurso(
-  config.TURSO_DATABASE_URL,
-  config.TURSO_AUTH_TOKEN
-); */
 
 export const accessJWTExpiration = {
   remember: "1h",
