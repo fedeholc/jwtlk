@@ -1,0 +1,302 @@
+ :root {
+   --white: #ffffff;
+   --almost-white: #fafafa;
+   --almost-black: #1a1a1a;
+   --gray-light: #aaaaaa;
+   --gray-middle: #808080;
+   --red: #e20000;
+
+   --button-color: #00a7d1;
+   --button-hover-color: #0071b3;
+   --button-color2: #db009a;
+   --button-hover-color2: #a50073;
+   --button-color3: #ffcc00;
+   --button-hover-color3: #ffd755;
+
+   --dialog-background-color: var(--almost-white);
+   --dialog-border-color: #00446b;
+   --dialog-backdrop-color: rgba(0, 0, 0, 0.25);
+   --input-border-color: var(--gray-light);
+ }
+
+ body {
+   background-color: var(--white);
+ }
+
+ body,
+ form {
+   display: flex;
+   flex-direction: column;
+   place-items: center;
+   gap: 1rem;
+
+ }
+
+ body,
+ form,
+ input,
+ button,
+ p,
+ div,
+ label {
+   font-family: monospace, sans-serif;
+ }
+
+ h2,
+ h3 {
+   margin: 0;
+   padding: 0;
+ }
+
+ input,
+ button,
+ p {
+   width: fit-content;
+   max-width: 600px;
+   text-wrap: balance;
+   word-break: break-all;
+ }
+
+ button {
+   padding: 0.5rem 1rem;
+   background-color: var(--button-color);
+   color: var(--white);
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+
+ button:hover {
+   background-color: var(--button-hover-color);
+ }
+
+ dialog {
+   background-color: var(--dialog-background-color);
+   width: 100%;
+   max-width: 400px;
+   padding: 1rem 1rem;
+   margin: 2rem auto;
+   border-radius: 10px;
+   border: 2px solid var(--dialog-border-color);
+   box-shadow: 4px 4px 0 0 var(--dialog-border-color);
+   position: relative;
+   animation: fadeIn 0.3s ease;
+
+   form {
+     padding-top: 2rem;
+     padding-bottom: 1.5rem;
+   }
+ }
+
+ dialog::backdrop {
+   background-color: var(--dialog-backdrop-color)
+ }
+
+
+ form div {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+ }
+
+ form label {
+   font-weight: bold;
+ }
+
+ form input {
+   padding: 0.5rem;
+   margin-bottom: 0.5rem;
+   border: 1px solid var(--input-border-color);
+   border-radius: 5px;
+ }
+
+ form input[type="email"],
+ form input[type="password"],
+ form input[type="text"] {
+   min-width: 250px;
+ }
+
+ section {
+   display: flex;
+   flex-direction: column;
+ }
+
+ span {
+   display: flex;
+   flex-direction: row;
+   place-content: center;
+   align-items: center;
+   gap: 0.5rem;
+ }
+
+ .btn-reset {
+   background-color: transparent;
+   color: var(--gray-middle);
+   border-bottom: 1px dashed var(--gray-middle);
+   padding: 0rem;
+   border-radius: 0;
+ }
+
+ .btn-reset:hover {
+   background-color: transparent;
+   color: var(--almost-black);
+   border-bottom: 1px dashed var(--almost-black);
+ }
+
+ .btn-login {
+   background-color: var(--button-color2);
+ }
+
+ .btn-login:hover {
+   background-color: var(--button-hover-color2)
+ }
+
+ .btn-logout,
+ .btn-delete-open {
+   color: var(--almost-black);
+   background-color: var(--button-color3)
+ }
+
+ .btn-logout:hover,
+ .btn-delete-open:hover {
+   background-color: var(--button-hover-color3)
+ }
+
+ .close-btn {
+   position: absolute;
+   top: 0.2rem;
+   right: 0.88rem;
+   font-size: 2rem;
+   color: var(--gray-light);
+   cursor: pointer;
+ }
+
+ .close-btn:hover {
+   color: var(--almost-black);
+ }
+
+ .reset-container {
+   overflow-y: auto;
+   max-height: 70vh;
+ }
+
+ .login-signup {
+   display: flex;
+   flex-direction: row;
+   gap: 1rem;
+   width: 100%;
+   justify-content: center;
+ }
+
+ .info-slot {
+   max-width: 250px;
+   color: var(--red);
+   font-size: 0.8rem;
+   text-align: center;
+ }
+
+ .remember-me {
+   display: flex;
+   flex-direction: row;
+   gap: 0.5rem;
+   align-items: stretch;
+   width: 100%;
+
+   label {
+     font-size: 0.9rem;
+     font-weight: normal;
+     padding: 0rem;
+   }
+
+   input {
+     padding: 0rem;
+     margin: 0rem;
+   }
+ }
+
+ .remember-me>label:hover,
+ .remember-me>input:hover {
+   cursor: pointer;
+ }
+
+ .login-section {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   box-shadow: 5px 5px 0 0 var(--gray-middle);
+   border-radius: 10px;
+   border: 1px solid var(--gray-middle);
+   padding: 2rem;
+
+ }
+
+ .user-section {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+
+   h2,
+   p {
+     margin: 0;
+     padding: 0;
+   }
+
+   p {
+     padding-top: 0.5rem;
+   }
+
+   div {
+     min-width: 250px;
+     border: 1px solid var(--gray-middle);
+     padding: 1rem;
+     border-radius: 5px;
+   }
+
+   div.user-history {
+     display: none;
+     white-space: pre-line;
+     max-height: 300px;
+     overflow: auto;
+   }
+ }
+
+ .or {
+   color: var(--gray-middle);
+   padding: 0.5rem;
+ }
+
+ .row {
+   display: flex;
+   flex-direction: row;
+   gap: 1rem;
+   justify-content: space-evenly;
+ }
+
+ .vibrate {
+   animation: vibrate 0.3s linear;
+ }
+
+ @keyframes vibrate {
+   0% {
+     transform: translateX(0);
+   }
+
+   25% {
+     transform: translateX(-5px);
+   }
+
+   50% {
+     transform: translateX(5px);
+   }
+
+   75% {
+     transform: translateX(-5px);
+     ;
+   }
+
+   100% {
+     transform: translateX(0);
+   }
+ }

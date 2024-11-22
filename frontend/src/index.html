@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- TODO: ver  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; connect-src *;  style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Learning Kit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <h1 data-testid="welcome">Welcome</h1>
+
+  <section data-login-section class="login-section">
+    <h2>Log in </h2>
+    <div class="row">
+      <button data-login-github-button class="btn-login">Login with GitHub</button>
+      <button data-login-google-button class="btn-login">Login with Google</button>
+    </div>
+    <div class="or">- - - OR - - -</div>
+
+    <!-- Los ids de los inputs están para las labels -->
+    <form>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+      </div>
+      <div class="remember-me">
+        <input type="checkbox" name="remember-me" id="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+      <div data-login-info data-testid="login-info" class="info-slot"></div>
+      <div class="login-signup">
+        <button data-login-pass-button class="btn-login" type="submit">Login</button>
+        <button data-login-signup-button>Sign Up</button>
+      </div>
+    </form>
+    <div>
+      <button data-login-reset-button data-testid="reset-button" class="btn-reset">Reset Password</button>
+    </div>
+  </section>
+
+  <section data-user-section class="user-section">
+    <div>
+      <h2 data-testid="user-data">User data</h2>
+      <p data-user-display></p>
+      <p data-user-id></p>
+      <p data-user-email></p>
+
+    </div>
+    <button data-user-delete-button class="btn-delete-open">Delete Account</button>
+    <button data-user-logout-button class="btn-logout">Logout</button>
+    <button data-user-history-button data-testid="button-history" class="btn-history">View visits history</button>
+    <div data-user-history data-testid="user-history" class="user-history"></div>
+  </section>
+
+  <dialog data-signup-dialog>
+    <span data-signup-close-button class="close-btn">&times;</span>
+    <h2>Sign Up</h2>
+    <form>
+      <div>
+        <label for="su-email">Email</label>
+        <input type="email" id="su-email" name="su-email" required>
+      </div>
+      <div>
+        <label for="su-password">Password</label>
+        <input type="password" id="su-password" name="su-password" required>
+      </div>
+      <div>
+        <label for="su-confirm-password">Confirm Password</label>
+        <input type="password" id="su-confirm-password" name="confirm-password" required>
+      </div>
+      <div data-signup-info class="info-slot"></div>
+      <button data-signup-submit-button type="submit">Sign Up</button>
+    </form>
+  </dialog>
+
+  <dialog data-delete-dialog>
+    <span data-delete-close-button class="close-btn">&times;</span>
+    <form>
+      <h3 data-delete-user></h3>
+
+      <div>
+        <label for="delete-password">Password</label>
+        <input type="password" id="delete-password" name="delete-password" required>
+      </div>
+
+      <div data-delete-info class="info-slot"></div>
+      <button data-delete-submit-button type="submit">Delete Account</button>
+    </form>
+  </dialog>
+
+  <dialog data-reset-dialog>
+    <span data-reset-close-button class="close-btn">&times;</span>
+    <h2>Reset Password</h2>
+    <div class="reset-container">
+      <form>
+        <div>
+          <label for="reset-email">E-mail</label>
+          <input type="email" id="reset-email" name="reset-email" required>
+        </div>
+        <div data-reset-code-info data-testid="send-info" class="info-slot"></div>
+        <button data-reset-send-button data-testid="send-button">Send me a code</button>
+      </form>
+      <form>
+        <div>
+          <label for="reset-code"> Code:</label>
+          <input type="text" maxlength="6" minlength="6" id="reset-code" name="reset-code" required>
+        </div>
+        <div>
+          <label for="reset-password">New Password</label>
+          <input type="password" id="reset-password" name="reset-password" required>
+        </div>
+        <div>
+          <label for="reset-confirm-password">Confirm Password</label>
+          <input type="password" id="reset-confirm-password" name="reset-confirm-password" required>
+        </div>
+        <div data-reset-change-info data-testid="change-info" class="info-slot"></div>
+        <button data-reset-change-button data-testid="change-button">Change Password</button>
+      </form>
+    </div>
+  </dialog>
+
+</body>
+
+</html>
