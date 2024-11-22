@@ -87,8 +87,6 @@ export async function handleAuthGoogleCallback(req, res) {
         );
     }
 
-    // Verifica si el usuario existe en la base de datos
-
     /**@type {types.UserPayload & {pass: string}} */
     let userInDB = await db.getUserByEmail(gUserData.email);
 

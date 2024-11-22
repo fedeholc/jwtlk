@@ -30,8 +30,8 @@ checkGmail();
 checkDB();
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//- Funciones para comprobar las variables de entorno y - - - -
-//- establecer la configuración inicial.- - - - - - - - - - - -
+//- Functions to check the environment variables and  - - - - -
+//- set the initial configuration.  - - - - - - - - - - - - - -
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 function checkNodeEnv() {
@@ -199,11 +199,11 @@ function getAccessKey() {
 
   if (process.env.ACCESS_SECRET_KEY) {
     try {
-      // Decodificar la clave en Base64 desde el archivo .env
+      // Decode the key in Base64 from the .env file
       const decodedKey = Buffer.from(process.env.ACCESS_SECRET_KEY, "base64");
       accessSecretKey = new Uint8Array(decodedKey);
 
-      // Validar que la clave tenga la longitud esperada (32 bytes)
+      // Validate that the key has the expected length (32 bytes)
       if (accessSecretKey.length !== 32) {
         throw new Error("Access secret key is not 32 bytes long.");
       }
@@ -239,11 +239,11 @@ function getRefreshKey() {
 
   if (process.env.REFRESH_SECRET_KEY) {
     try {
-      // Decodificar la clave en Base64 desde el archivo .env
+      // Decode the key in Base64 from the .env file
       const decodedKey = Buffer.from(process.env.REFRESH_SECRET_KEY, "base64");
       refreshSecretKey = new Uint8Array(decodedKey);
 
-      // Validar que la clave tenga la longitud esperada (32 bytes)
+      // Validate that the key has the expected length (32 bytes)
       if (refreshSecretKey.length !== 32) {
         throw new Error("Refresh secret key is not 32 bytes long.");
       }
