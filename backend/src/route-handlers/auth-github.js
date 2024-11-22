@@ -87,8 +87,8 @@ async function handleAuthGitHubCallback(req, res) {
         );
     }
 
-    // Si en la configuración del GitHub no está puesto el email como público
-    // no se puede acceder al mismo para registrarse en la aplicación
+    // if in GitHub settings the email is not set as public
+    // it is not possible to access it to register in the application
     if (!ghUserData.email) {
       return res
         .status(500)
@@ -96,8 +96,6 @@ async function handleAuthGitHubCallback(req, res) {
           `Github did not provide an email address. Probably you have not set it as public in your github settings.`
         );
     }
-
-    // Verifica si el usuario existe en la base de datos
 
     /**@type {types.UserPayload & {pass: string}} */
     let userInDB = await db.getUserByEmail(ghUserData.email);

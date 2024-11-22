@@ -6,14 +6,14 @@ import { config } from "./config.js";
 export function configServer() {
   const app = express();
 
-  app.use(express.json()); //sirve para hacer que los datos que vienen en el body de la request sean parseados a JSON y se puedan acceder con req.body
+  app.use(express.json()); // It is used to parse the data coming from the request body to JSON and can be accessed with req
 
-  app.use(cookieParser()); //sirve para parsear las cookies que vienen en la request (en un solo string) y se pueden acceder con req.cookies
+  app.use(cookieParser()); // It is used to parse the cookies that come in the request (in a single string) and can be accessed with req.cookies
 
   app.use(
     cors({
       origin: function (origin, callback) {
-        // Permitir solicitudes sin origen (por ejemplo, archivos locales)
+        // Allow requests without origin (e.g., local files)
         if (!origin) {
           return callback(null, true);
         }
