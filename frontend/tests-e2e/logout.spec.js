@@ -4,7 +4,8 @@ test("Logout", async ({ page }) => {
   // Sign up a new user
   let randomString = Math.random().toString(36);
 
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
+
   await page.getByRole("button", { name: "Sign Up" }).click({ force: true });
 
   await page.locator("#su-email").fill(randomString + "@test.com");

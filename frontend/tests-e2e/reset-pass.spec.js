@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("Reset password dialog and buttons", async ({ page }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
+
   await expect(page.getByTestId("login-info")).not.toBeVisible();
 
   await page.getByTestId("reset-button").click({ force: true });

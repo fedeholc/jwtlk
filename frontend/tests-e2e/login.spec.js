@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("Login with wrong email should display an error message", async ({
   page,
 }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await expect(page.getByTestId("login-info")).not.toBeVisible();
 
   await page.getByPlaceholder("email").fill("blablabla");
@@ -18,7 +18,7 @@ test("Login with wrong email should display an error message", async ({
 test("Login with wrong password should display an error message", async ({
   page,
 }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await expect(page.getByTestId("login-info")).not.toBeVisible();
 
   await page.getByPlaceholder("email").fill("fede@fede.com");
@@ -33,7 +33,7 @@ test("Login with wrong password should display an error message", async ({
 test("Login with empty credentials should display an error message", async ({
   page,
 }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await expect(page.getByTestId("login-info")).not.toBeVisible();
 
   await page.getByPlaceholder("email").fill("");
@@ -51,7 +51,7 @@ test("Login with right credentials should display welcome screen", async ({
   // Sign up a new user
   let randomString = Math.random().toString(36);
 
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await page.getByRole("button", { name: "Sign Up" }).click({ force: true });
 
   await page.locator("#su-email").fill(randomString + "@test.com");
@@ -78,7 +78,7 @@ test("Login with right credentials should display welcome screen", async ({
 });
 
 test("Login with github should redirect to github", async ({ page }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await page
     .getByRole("button", { name: "Login with GitHub" })
     .click({ force: true });
@@ -87,7 +87,7 @@ test("Login with github should redirect to github", async ({ page }) => {
 });
 
 test("Login with google should redirect to google", async ({ page }) => {
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
   await page
     .getByRole("button", { name: "Login with Google" })
     .click({ force: true });

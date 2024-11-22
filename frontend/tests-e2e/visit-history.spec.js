@@ -2,7 +2,8 @@ import { test, expect } from "@playwright/test";
 test("Show user visit history", async ({ page }) => {
   // Sign up a new user
   let randomString = Math.random().toString(36);
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
+
   await page.getByRole("button", { name: "Sign Up" }).click({ force: true });
   await page.locator("#su-email").fill(randomString + "@test.com");
   await page.locator("#su-password").fill("pass");
@@ -26,7 +27,8 @@ test("Show user visit history", async ({ page }) => {
   await expect(page.getByTestId("welcome")).toBeVisible();
   await expect(page.getByTestId("user-history")).not.toBeVisible();
   await page.goto("http://playwright.dev/");
-  await page.goto("http://127.0.0.1:8080/");
+  await page.goto("/");
+
   await expect(page.getByTestId("user-history")).not.toBeVisible();
   await page.getByTestId("button-history").click({ force: true });
   await expect(page.getByTestId("user-history")).toBeVisible();
