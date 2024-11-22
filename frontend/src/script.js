@@ -114,8 +114,8 @@ async function handleLogin(event) {
 
     let data = await response.json();
     userData = auth.decodeUserFromToken(data.accessToken);
-    renderUI();
     localStorage.setItem("accessToken", JSON.stringify(data.accessToken));
+    renderUI();
     return;
   } catch (error) {
     console.error("Login failed:", error);
