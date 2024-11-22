@@ -23,7 +23,7 @@ export function configServer() {
           return callback(new Error("Not allowed by CORS"));
         }
       },
-      credentials: true, // Permite enviar cookies y credenciales
+      credentials: true, // Allow cookies
     })
   );
 
