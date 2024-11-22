@@ -25,7 +25,7 @@ export async function handleResetPass(req, res) {
       from: config.GMAIL_USER,
       to: user.email,
       subject: "Reset your password",
-      text: `Code: ${resetCode}`,
+      text: `Your reset code is: ${resetCode}`,
     };
     const transporter = nodemailer.createTransport({
       service: "Gmail",
