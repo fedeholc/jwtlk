@@ -89,6 +89,7 @@ export async function handleAuthGoogleCallback(req, res) {
     if (!userInDB) {
       const id = await db.insertUser(
         gUserData.email,
+        // Generate a random password for the user
         hashPassword(crypto.randomBytes(8).toString("hex"))
       );
       tokenUser = { id: id, email: gUserData.email };

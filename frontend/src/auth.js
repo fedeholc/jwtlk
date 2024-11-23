@@ -74,7 +74,7 @@ async function getNewAccessToken() {
   try {
     const response = await fetch(apiURL.REFRESH, {
       method: "POST",
-      credentials: "include", // Esto asegura que la cookie HTTP-only se envíe con la solicitud
+      credentials: "include", // to send the refresh token cookie
     });
     const data = await response.json();
     if (data.accessToken) {

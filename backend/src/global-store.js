@@ -54,14 +54,6 @@ export const refreshCookieOptions = {
 };
 
 /** @type {import('express').CookieOptions} */
-export const returnCookieOptions = {
-  httpOnly: true,
-  secure: config.NODE_ENV === "production",
-  sameSite: "strict",
-  maxAge: 5 * 60 * 1000, //5m
-};
-
-/** @type {import('express').CookieOptions} */
 export const resetCookieOptions = {
   httpOnly: true,
   secure: config.NODE_ENV === "production",
