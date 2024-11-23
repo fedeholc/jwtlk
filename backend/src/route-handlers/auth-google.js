@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import { apiURL, googleEP } from "../endpoints.js";
 import { hashPassword, genRefreshToken } from "../util-auth.js";
-import { refreshCookieOptions, returnCookieOptions } from "../global-store.js";
+import { refreshCookieOptions } from "../global-store.js";
 // eslint-disable-next-line no-unused-vars
 import * as types from "../types.js";
 import { config } from "../config.js";
@@ -16,13 +16,6 @@ const redirectURI = apiURL.AUTH_GOOGLE_CALLBACK;
  * @param {import('express').Response} res - Express response object.
  */
 export function handleAuthGoogle(req, res) {
-  if (!req.query.returnTo) {
-    console.error("No returnTo URL provided");
-    return res.status(400).json({ error: "No returnTo URL provided" });
-  }
-
-  res.cookie("returnCookie", req.query.returnTo, returnCookieOptions);
-
   const googleAuthURL = `${googleEP.AUTHORIZE}?client_id=${clientID}&redirect_uri=${redirectURI}&response_type=code&scope=email profile`;
   res.status(200).json({ gauth: googleAuthURL });
 }

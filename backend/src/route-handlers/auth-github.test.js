@@ -2,7 +2,6 @@ import { expect, test, describe, vi, beforeEach } from "vitest";
 import request from "supertest";
 import { apiEP, gitHubEP, apiURL } from "../endpoints.js";
 import { handleAuthGitHub, handleAuthGitHubCallback } from "./auth-github.js";
-import process from "process";
 import { configServer } from "../server.js";
 import { genRefreshToken } from "../util-auth.js";
 import { MockAgent, setGlobalDispatcher } from "undici";
@@ -45,17 +44,9 @@ describe("Auth Github EP", () => {
   });
 
   test("should return 200 and GH auth URL", async () => {
-    const response = await request(app)
-      .get(apiEP.AUTH_GITHUB + "?returnTo='return url'")
-      .send();
+    const response = await request(app).get(apiEP.AUTH_GITHUB).send();
     expect(response.status).toBe(200);
     expect(response.body.ghauth).toEqual(githubAuthURL);
-  });
-
-  test("should return 400 if no returnTo URL provided", async () => {
-    const response = await request(app).get(apiEP.AUTH_GITHUB).send();
-    expect(response.status).toBe(400);
-    expect(response.body).toEqual({ error: "No returnTo URL provided" });
   });
 });
 

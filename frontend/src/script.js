@@ -135,14 +135,17 @@ async function handleLogin(event) {
 async function handleLoginGH(event) {
   event.preventDefault();
   let returnTo = window.location.href;
+  document.cookie = `returnCookie=${returnTo}; path=/`;
+
   try {
-    let response = await fetch(apiURL.AUTH_GITHUB + `?returnTo=${returnTo}`, {
+    let response = await fetch(apiURL.AUTH_GITHUB, {
       method: "GET",
-      credentials: "include", //to send the returnTo cookie
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
     });
+
     if (!response?.ok) {
       console.log(
         `Error logging in with GitHub. ${response.status} ${response.statusText}`
@@ -166,10 +169,12 @@ async function handleLoginGH(event) {
  * @param {Event} event The event that triggered this function.
  */
 async function handleLoginGG(event) {
+  event.preventDefault();
+  let returnTo = window.location.href;
+  document.cookie = `returnCookie=${returnTo}; path=/`;
+
   try {
-    event.preventDefault();
-    let returnTo = window.location.href;
-    let response = await fetch(apiURL.AUTH_GOOGLE + `?returnTo=${returnTo}`, {
+    let response = await fetch(apiURL.AUTH_GOOGLE, {
       method: "GET",
       credentials: "include",
       headers: {

@@ -44,17 +44,9 @@ describe("Auth google EP", () => {
   });
 
   test("should return 200 and GG auth URL", async () => {
-    const response = await request(app)
-      .get(apiEP.AUTH_GOOGLE + "?returnTo='return url'")
-      .send();
+    const response = await request(app).get(apiEP.AUTH_GOOGLE).send();
     expect(response.status).toBe(200);
     expect(response.body.gauth).toEqual(googleAuthURL);
-  });
-
-  test("should return 400 if no returnTo URL provided", async () => {
-    const response = await request(app).get(apiEP.AUTH_GOOGLE).send();
-    expect(response.status).toBe(400);
-    expect(response.body).toEqual({ error: "No returnTo URL provided" });
   });
 });
 

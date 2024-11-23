@@ -2,7 +2,7 @@ export { handleAuthGitHub, handleAuthGitHubCallback };
 import crypto from "node:crypto";
 import { apiURL, gitHubEP } from "../endpoints.js";
 import { hashPassword, genRefreshToken } from "../util-auth.js";
-import { refreshCookieOptions, returnCookieOptions } from "../global-store.js";
+import { refreshCookieOptions } from "../global-store.js";
 import { db } from "../global-store.js";
 // eslint-disable-next-line no-unused-vars
 import * as types from "../types.js";
@@ -17,13 +17,6 @@ const redirectURI = apiURL.AUTH_GITHUB_CALLBACK;
  * @param {import('express').Response} res - Express response object.
  */
 function handleAuthGitHub(req, res) {
-  if (!req.query.returnTo) {
-    console.error("No returnTo URL provided");
-    return res.status(400).json({ error: "No returnTo URL provided" });
-  }
-
-  res.cookie("returnCookie", req.query.returnTo, returnCookieOptions);
-
   const githubAuthURL = `${gitHubEP.AUTHORIZE}?client_id=${clientID}&scope=user:email&redirect_uri=${redirectURI}`;
 
   res.status(200).json({ ghauth: githubAuthURL });
