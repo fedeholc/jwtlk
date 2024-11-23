@@ -467,7 +467,7 @@ async function handleSendCode(e) {
       return;
     }
 
-    DE.reset.codeInfo.textContent = `The secuirity code was sent to your email. 
+    DE.reset.codeInfo.textContent = `The security code was sent to your email. 
       Check your inbox.`;
     DE.reset.codeInfo.style.color = "green";
     DE.reset.codeInfo.style.fontWeight = "bold";

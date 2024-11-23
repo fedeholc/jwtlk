@@ -12,7 +12,6 @@ export async function handleLogOut(req, res) {
       req.cookies.refreshToken,
       config.REFRESH_SECRET_KEY
     );
-
    
     // We add the expiration date to the denied list so that once the 
     // expiration date has passed the token can be deleted from the list
