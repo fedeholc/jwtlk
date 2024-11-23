@@ -134,8 +134,6 @@ async function handleLogin(event) {
  */
 async function handleLoginGH(event) {
   event.preventDefault();
-  let returnTo = window.location.href;
-  document.cookie = `returnCookie=${returnTo}; path=/`;
 
   try {
     let response = await fetch(apiURL.AUTH_GITHUB, {
@@ -152,6 +150,10 @@ async function handleLoginGH(event) {
       );
       return;
     }
+
+    let returnTo = window.location.href;
+    document.cookie = `returnCookie=${returnTo}; path=/`;
+
     let data = await response.json();
     window.location.href = data.ghauth;
   } catch (error) {
@@ -170,8 +172,6 @@ async function handleLoginGH(event) {
  */
 async function handleLoginGG(event) {
   event.preventDefault();
-  let returnTo = window.location.href;
-  document.cookie = `returnCookie=${returnTo}; path=/`;
 
   try {
     let response = await fetch(apiURL.AUTH_GOOGLE, {
@@ -188,6 +188,9 @@ async function handleLoginGG(event) {
       );
       return;
     }
+
+    let returnTo = window.location.href;
+    document.cookie = `returnCookie=${returnTo}; path=/`;
 
     let data = await response.json();
     window.location.href = data.gauth;
