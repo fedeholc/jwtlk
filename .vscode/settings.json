@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["gauth", "ghauth"]
+  "cSpell.words": ["gauth", "ghauth"],
+  "cSpell.enabledFileTypes": {
+    "javascript": false
+  }
 }
