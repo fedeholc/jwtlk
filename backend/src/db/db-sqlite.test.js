@@ -2,9 +2,6 @@ import { dbSqlite3 } from "./db-sqlite.js";
 import { DBInterface } from "./db-interface.js";
 import { test, expect, beforeEach, afterEach } from "vitest";
 
-
-//TODO: faltan los tests para los casos en los que debe fallar (ej, no se puede insertar un usuario con un email que ya existe, agregar un token repetido a la denylist -vacío-)
-
 let db;
 
 beforeEach(async () => {
