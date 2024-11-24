@@ -1,5 +1,18 @@
 {
-  "cSpell.words": ["gauth", "ghauth", "libsql"],
+  "cSpell.words": [
+    "eslintcache",
+    "gauth",
+    "ghauth",
+    "istanbul",
+    "jscoverage",
+    "jspm",
+    "libsql",
+    "Microbundle",
+    "mydb",
+    "pids",
+    "stylelintcache",
+    "wscript"
+  ],
   "cSpell.enabledFileTypes": {
     "javascript": false
   }
