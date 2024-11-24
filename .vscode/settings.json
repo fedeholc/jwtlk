@@ -1,14 +1,17 @@
 {
   "cSpell.words": [
     "eslintcache",
+    "fullstart",
     "gauth",
     "ghauth",
+    "httpserver",
     "istanbul",
     "jscoverage",
     "jspm",
     "libsql",
     "Microbundle",
     "mydb",
+    "nodejwt",
     "pids",
     "stylelintcache",
     "wscript"
