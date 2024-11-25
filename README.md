@@ -1,6 +1,6 @@
 # JWT Learning Kit
 
-## Haz tu propia auth, al menos una vez en la vida
+## (ES) Haz tu propia auth, al menos una vez en la vida
 
 Este repositorio es parte de [**JWT Learning Kit**](https://jwtlk.fedeholc.ar), una guía que tiene como objetivo compartir lo que he aprendido implementando un sistema de autenticación desde cero usando JSON Web Token (JWT).
 
@@ -10,7 +10,7 @@ En la guía encontrarás explicaciones sobre los procesos de autenticación y su
 
 Espero que les resulte útil a quienes estén en el mismo camino de aprendizaje, o al menos a mi yo del futuro que pronto comenzará a olvidar mucho de lo que en la guía se presenta.
 
-## Roll your own auth, at least once in your life
+## (EN) Roll your own auth, at least once in your life
 
 This repository is part of [**JWT Learning Kit**](https://jwtlk.fedeholc.ar), a guide that aims to share what I have learned by implementing an authentication system from scratch using JSON Web Token (JWT).
 
@@ -24,8 +24,8 @@ While the code and the comments in the code are in English, the guidance documen
 
 ## Licencia / License
 
-- Este proyecto está bajo la Licencia MIT - vea el archivo [LICENSE](LICENSE) para más detalles.
-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- (ES) Este proyecto está bajo la Licencia MIT - vea el archivo [LICENSE](LICENSE) para más detalles.
+- (EN) This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Autor / Author
 
